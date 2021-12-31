@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import Constants from 'expo-constants';
 import PostAdd from './components/screens/PostAdd';
+import cars from './components/screens/cars';
 import Dashboard from './components/screens/Dashboard';
 import ViewAd from './components/screens/ViewAd';
 import { NavigationContainer } from '@react-navigation/native';
@@ -42,6 +43,9 @@ const CarSale = ({ navigation }) => {
             } else if (route.name === 'View Ads') {
               iconName = focused ? 'ios-eye' : 'ios-eye-outline';
             }
+             else   {
+              iconName = focused ? 'car' : 'car-outline';
+            }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
@@ -51,6 +55,7 @@ const CarSale = ({ navigation }) => {
         }}>
         <Tab.Screen name="Post Ad" component={PostAdd} />
         <Tab.Screen name="View Ads" component={ViewAd} />
+        <Tab.Screen name="Cars" component={cars} />
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -73,7 +78,7 @@ const App = () => {
           },
         }}>
         <drawer.Screen name="Buy and Sell" component={CarSale} options={{}} />
-        <drawer.Screen name="Dashboard" compoent={Dashboard} />
+        <drawer.Screen name="Dashboard" component={Dashboard} />
       </drawer.Navigator>
     </NavigationContainer>
   );
