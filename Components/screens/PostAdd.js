@@ -86,8 +86,8 @@ export default function AddProduct() {
           <TextInput
             style={{
               borderWidth: 1,
-              height: 80,
-              width: 380,
+              height: 60,
+              width: 300,
               alignSelf: 'center',
               marginBottom: 20,
             }}
@@ -97,8 +97,8 @@ export default function AddProduct() {
           <TextInput
             style={{
               borderWidth: 1,
-              height: 80,
-              width: 380,
+              height: 60,
+              width: 300,
               alignSelf: 'center',
               marginBottom: 10,
             }}
@@ -109,8 +109,8 @@ export default function AddProduct() {
           <TextInput
             style={{
               borderWidth: 1,
-              height: 80,
-              width: 380,
+              height: 60,
+              width: 300,
               alignSelf: 'center',
               marginBottom: 20,
             }}
@@ -120,8 +120,8 @@ export default function AddProduct() {
           <TextInput
             style={{
               borderWidth: 1,
-              height: 80,
-              width: 380,
+              height: 60,
+              width: 300,
               alignSelf: 'center',
               marginBottom: 20,
             }}
@@ -131,8 +131,8 @@ export default function AddProduct() {
           <TextInput
             style={{
               borderWidth: 1,
-              height: 80,
-              width: 380,
+              height: 60,
+              width: 300,
               alignSelf: 'center',
               marginBottom: 20,
             }}
@@ -142,8 +142,8 @@ export default function AddProduct() {
         <TextInput
             style={{
               borderWidth: 1,
-              height: 80,
-              width: 380,
+              height: 60,
+              width: 300,
               alignSelf: 'center',
               marginBottom: 20,
             }}
@@ -154,7 +154,7 @@ export default function AddProduct() {
 
         <TouchableOpacity
           style={{
-            backgroundColor: `#008080`,
+            backgroundColor: `#4682b4`,
             height: 60,
             width: 60,
             justifyContent: 'center',
@@ -163,6 +163,7 @@ export default function AddProduct() {
             borderRadius: 50,
             marginLeft: 220,
             marginTop: 10,
+            marginBottom:20
           }}
           onPress={savedata}>
           <Icon name="plus" size={24} color="#fff" />
@@ -175,7 +176,7 @@ export default function AddProduct() {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#778899',
-    padding: 40,
+    padding: 30,
     borderRadius: 20,
     alignItems: 'center',
     margin: 20,

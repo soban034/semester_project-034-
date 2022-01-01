@@ -109,7 +109,7 @@ export default ({ navigation }) => {
               data={array}
               renderItem={({ item, index }) => {
                 return (
-                  <View>
+                  <View style={{alignItems:'center'}}>
                     <View
                       style={{
                         backgroundColor: '#cdcdcd',
@@ -120,12 +120,17 @@ export default ({ navigation }) => {
                         borderRadius: 10,
                         justifyContent: 'space-evenly',
                         alignItems: 'center',
+                        marginBottom:10
                       }}>
-                       <Text style={{fontWeight:'bold'}}>First Name:</Text> <Text>{item.title}</Text>
-                      <Text style={{fontWeight:'bold'}}>First Name:</Text> <Text>{item.condition}</Text>
-                      <Text style={{fontWeight:'bold'}}>Last Name:</Text> <Text>{item.description}</Text>
-                     <Text style={{fontWeight:'bold'}}>Email:</Text> <Text>{item.price}</Text>
-                      <View style={{ borderTopWidth: 1, marginLeft: 200 }}>
+                       <Text style={{fontWeight:'bold'}}>Product Title:</Text> 
+                       <Text>{item.title}</Text>
+                      <Text style={{fontWeight:'bold'}}>Condition:</Text> 
+                      <Text>{item.condition}</Text>
+                      <Text style={{fontWeight:'bold'}}>Description:</Text> 
+                      <Text>{item.description}</Text>
+                     <Text style={{fontWeight:'bold'}}>Price:</Text> 
+                     <Text>{item.price}</Text>
+                      <View style={{ borderTopWidth: 1, marginLeft: 200 }}> 
                         <TouchableOpacity
                           onPress={() => {
                             deleteData(index);

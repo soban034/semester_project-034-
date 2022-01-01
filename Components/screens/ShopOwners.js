@@ -105,11 +105,11 @@ export default ({ navigation }) => {
         </View>
         <View>
           <View style={{ margin: 10 }}>
-            <FlatList 
+            <FlatList
               data={array}
               renderItem={({ item, index }) => {
                 return (
-                  <View>
+                  <View style={{alignItems:'center'}}>
                     <View
                       style={{
                         backgroundColor: '#cdcdcd',
@@ -120,11 +120,14 @@ export default ({ navigation }) => {
                         borderRadius: 10,
                         justifyContent: 'space-evenly',
                         alignItems: 'center',
-                        marginBottom:10
+                        marginBottom: 10,
                       }}>
-                      <Text style={{fontWeight:'bold'}}>First Name:</Text> <Text>{item.firstname}</Text>
-                      <Text style={{fontWeight:'bold'}}>Last Name:</Text> <Text>{item.lastname}</Text>
-                     <Text style={{fontWeight:'bold'}}>Email:</Text> <Text>{item.email}</Text>
+                      <Text style={{ fontWeight: 'bold' }}>First Name:</Text>
+                      <Text>{item.firstname}</Text>
+                      <Text style={{ fontWeight: 'bold' }}>Last Name:</Text>
+                      <Text>{item.lastname}</Text>
+                      <Text style={{ fontWeight: 'bold' }}>Email:</Text>
+                      <Text>{item.email}</Text>
                       <View style={{ borderTopWidth: 1, marginLeft: 200 }}>
                         <TouchableOpacity
                           onPress={() => {
