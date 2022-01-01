@@ -23,19 +23,13 @@ export default function AddProduct() {
   const [getengine, setengine] = React.useState('');
   const [getmake, setmake] = React.useState('');
   const [getphotos, setphotos] = React.useState();
+  const [getprice, setprice] = React.useState();
+
 
   const firebaseUrl =
     'https://reactnativefirstdatabase-a7b2b-default-rtdb.firebaseio.com/';
-
+ 
   const savedata = () => {
-
-    setname('')
-    settype('')
-    setmodel('')
-    setengine('')
-    setmake('')
-    
-    
     console.log('Adding');
 
     var requestoptions = {
@@ -47,6 +41,7 @@ export default function AddProduct() {
         model: getmodel,
         engine: getengine,
         make: getmake,
+        price:getprice,
       }),
     };
 
@@ -70,25 +65,23 @@ export default function AddProduct() {
   };
 
   return (
-    
     <SafeAreaView>
-    <ScrollView>
-      <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
-      <Icon name="plus" size={24} style={{}} color="#fff" />
-        <Text style={styles.buttonText}>Upload photo</Text>
-      </TouchableOpacity>
+      <ScrollView>
+        <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
+          <Icon name="plus" size={24} style={{}} color="#fff" />
+          <Text style={styles.buttonText}>Upload photo</Text>
+        </TouchableOpacity>
 
-      <View style={{ alignItems: 'center' }}>
-        <Image
-          source={{
-            uri: pickerResult.uri,
-          }}
-          style={{ width: 100, height: 100, borderRadius: 10 }}
-        />
-        {console.log(pickerResult.uri)}
-      </View>
+        <View style={{ alignItems: 'center' }}>
+          <Image
+            source={{
+              uri: pickerResult.uri,
+            }}
+            style={{ width: 100, height: 100, borderRadius: 10 }}
+          />
+          {console.log(pickerResult.uri)}
+        </View>
 
-     
         <View style={{ margin: 5, padding: 18, marginTop: 18 }}>
           <TextInput
             style={{
@@ -146,8 +139,18 @@ export default function AddProduct() {
             placeholder=" Make (e.g. Toyotta) "
             onChangeText={setmake}
           />
+        <TextInput
+            style={{
+              borderWidth: 1,
+              height: 80,
+              width: 380,
+              alignSelf: 'center',
+              marginBottom: 20,
+            }}
+            placeholder="Price "
+            onChangeText={setprice}
+          />
         </View>
-        
 
         <TouchableOpacity
           style={{
@@ -171,16 +174,13 @@ export default function AddProduct() {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#7bd3f7',
+    backgroundColor: '#778899',
     padding: 40,
     borderRadius: 20,
     alignItems: 'center',
     margin: 20,
   },
-  inputText: {
-    padding: 10,
-    borderWidth: 1,
-  },
+
   buttonText: {
     fontSize: 20,
     color: 'black',

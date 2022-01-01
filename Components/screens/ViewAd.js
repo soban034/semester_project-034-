@@ -12,6 +12,7 @@ import {
   FlatList,
 } from 'react-native';
 import { SearchBar } from 'react-native-elements';
+import cars from './cars'
 
 const firebaseUrl =
   'https://reactnativefirstdatabase-a7b2b-default-rtdb.firebaseio.com/';
@@ -75,7 +76,7 @@ function ViewAd({ navigation }) {
       style={{
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'flex-start',
+        alignItems: ' ',
         width: '100%',
         padding: 4,
         margin: 4,
@@ -95,19 +96,19 @@ function ViewAd({ navigation }) {
           <View style={{ padding: 7, margin: 8 }}>
             <Text
               style={{ fontWeight: 'bold', fontSize: 20, color: '#2C272E' }}>
-              Cars In The Store
+               All Cars 
             </Text>
           </View>
 
           <FlatList
             data={array}
-            numColumns={2}
+            
             renderItem={({ item }) => {
               return (
                 <View
                   style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
+                    
+                    justifyContent: 'space-between', 
                     width: '100%',
                     flexBasis: '50%',
                   }}>
@@ -145,37 +146,30 @@ function ViewAd({ navigation }) {
                     </View>
                     <View
                       style={{
-                        flexDirection: 'row',
+                        
                         justifyContent: 'space-between',
                         width: '100%',
-                        flexWrap: 'wrap',
-                        flexBasis: '50%',
+                       
+                        
                       }}>
                      
 
                       <TouchableOpacity
                         style={{
                           backgroundColor: '#2D4263',
-                          width: 30,
-                          height: 30,
+                          width: 45,
+                          height: 45,
                           borderRadius: 50,
                           justifyContent: 'center',
                           alignItems: 'center',
                           marginTop: 7,
                         }}
-                        onPress={() =>{navigation.navigate('Cars',{
+                        onPress={() =>{navigation.navigate('View Car',{
                           cars:item
                         })}
                           
                         }>
-                        <Text
-                          style={{
-                            color: 'white',
-                            fontSize: 18,
-                            fontWeight: 'bold',
-                          }}>
-                          +
-                        </Text>
+                        <Text style={{color:'#fff'}}>View</Text>
                       </TouchableOpacity>
                     </View>
                   </View>

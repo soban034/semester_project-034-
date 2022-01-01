@@ -15,13 +15,42 @@ import Constants from 'expo-constants';
 import PostAdd from './components/screens/PostAdd';
 import cars from './components/screens/cars';
 import Dashboard from './components/screens/Dashboard';
+import Products from './components/screens/products';
 import ViewAd from './components/screens/ViewAd';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as ImagePicker from 'expo-image-picker';
+
+const Stack = createStackNavigator();
+function Dashboardd() {
+  return ( 
+    <NavigationContainer independent={true}>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: `#2D4263`,
+          },
+          headerRight: () => (
+            <Icon
+              name="user"
+              size={28}
+              style={{ marginRight: 10 }}
+              color="#fff"
+            />
+          ),
+          headerTintColor: '#fff',
+        }}>
+        <Stack.Screen name="View Ads" component={ViewAd} options={{headerShown:false}} />
+        <Stack.Screen name="View Car" component={cars}  options={{headerShown:false}} 
+         />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 const CarSale = ({ navigation }) => {
@@ -43,10 +72,8 @@ const CarSale = ({ navigation }) => {
             } else if (route.name === 'View Ads') {
               iconName = focused ? 'ios-eye' : 'ios-eye-outline';
             }
-             else   {
-              iconName = focused ? 'car' : 'car-outline';
-            }
-            return <Ionicons name={iconName} size={size} color={color} />;
+             
+            return <Ionicons name={iconName} size={size} color={color} />; 
           },
         })}
         tabBarOptions={{
@@ -54,8 +81,8 @@ const CarSale = ({ navigation }) => {
           inactiveTintColor: 'gray',
         }}>
         <Tab.Screen name="Post Ad" component={PostAdd} />
-        <Tab.Screen name="View Ads" component={ViewAd} />
-        <Tab.Screen name="Cars" component={cars} />
+        <Tab.Screen name="View Ads" component={Dashboardd} />
+        
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -64,7 +91,7 @@ const CarSale = ({ navigation }) => {
 const drawer = createDrawerNavigator();
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <drawer.Navigator
         screenOptions={{
           headerStyle: {
