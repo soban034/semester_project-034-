@@ -29,7 +29,7 @@ function Home({ navigation }) {
      <Text style={{fontSize:20,fontWeight:'bold'}}>Welcome Admin!!</Text>
      <Text style={{fontSize:20,borderBottomWidth:0.5}}>Admin Can View /Delete:</Text>
      <Text style={{fontSize:18}}>- Shop Owners</Text>
-     <Text style={{fontSize:18}}>- Cars</Text>
+     <Text style={{fontSize:18}}>- Products</Text>
      <Text style={{fontSize:18}}>- Users</Text>
       <Pressable
         onPress={() => navigation.navigate('Shop Owners')}
@@ -38,11 +38,12 @@ function Home({ navigation }) {
           padding: 10,
           marginBottom: 10,
           marginTop: 10,
-          height:90,
+          height:90,   
           width:180,
           borderRadius:40,
           textAlign:'center',
-          alignItems:'center'
+          alignItems:'center',
+          justifyContent:'center'
         }}>
         <Text style={{fontSize:23,textAlign:'center',alignSelf:'center',margin:'auto'}}>Show Shop Owners</Text>
       </Pressable>
@@ -56,14 +57,16 @@ function Home({ navigation }) {
           width:180,
           borderRadius:40,
           textAlign:'center',
-          alignItems:'center'
+          alignItems:'center',
+          justifyContent:'center'
           
 
         }}
         onPress={() => navigation.navigate('Show Cars')}
         >
-        <Text style={{fontSize:23,textAlign:'center',alignSelf:'center',margin:'auto'}}>Show Cars</Text>
+        <Text style={{fontSize:23,textAlign:'center',alignSelf:'center',margin:'auto'}}>Show Products</Text>
       </Pressable>
+      
       <Pressable
         style={{
           backgroundColor: '#4682b4',
@@ -74,7 +77,8 @@ function Home({ navigation }) {
           width:180,
           borderRadius:40,
           textAlign:'center',
-          alignItems:'center'
+          alignItems:'center',
+          justifyContent:'center'
           
 
         }}
