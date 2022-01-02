@@ -30,7 +30,7 @@ export default function AddProduct() {
     'https://reactnativefirstdatabase-a7b2b-default-rtdb.firebaseio.com/';
  
   const savedata = () => {
-    console.log('Adding');
+   
 
     var requestoptions = {
       method: 'POST',

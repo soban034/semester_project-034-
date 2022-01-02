@@ -29,7 +29,7 @@ export default ({ navigation }) => {
 
   const deleteData = (index) => {
     const subid = arrayOfID[index];
-    console.log(subid);
+    
     var requestOptions = {
       method: 'DELETE',
     };
@@ -54,18 +54,18 @@ export default ({ navigation }) => {
         let samplearrayID = [];
         for (key in responsejson) {
           if (array.length == 0) {
-            console.log('First add');
+            
             samplearray.push(responsejson[key]);
             samplearrayID.push(key);
           } else {
-            console.log('other addition');
+           
             samplearray.push(responsejson[key]);
             samplearrayID.push(key);
           }
         }
         setarray(samplearray);
         setarrayofID(samplearrayID);
-        console.log(array);
+        
 
         setcondition(false);
       })

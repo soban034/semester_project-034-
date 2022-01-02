@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Image,
   StyleSheet,
@@ -10,38 +10,38 @@ import {
   ActivityIndicator,
   SafeAreaView,
   FlatList,
-} from 'react-native';
-import { SearchBar } from 'react-native-elements';
-import cars from './cars'
+} from "react-native";
+import { SearchBar } from "react-native-elements";
+import cars from "./cars";
 
 const firebaseUrl =
-  'https://reactnativefirstdatabase-a7b2b-default-rtdb.firebaseio.com/';
+  "https://reactnativefirstdatabase-a7b2b-default-rtdb.firebaseio.com/";
 
 function ViewAd({ navigation }) {
   const [array, setarray] = useState([]);
   const [getcondition, setcondition] = React.useState(true);
-  const [search, setSearch] = React.useState('');
-  const [filtered, setFilterted] = React.useState('');
+  const [search, setSearch] = React.useState("");
+  const [filtered, setFilterted] = React.useState("");
 
   const getproduct = () => {
     fetch(`${firebaseUrl}/CarDetails.json`, {
-      method: 'GET',
+      method: "GET",
     })
       .then((response) => response.json())
       .then((responsejson) => {
         let samplearray = [];
         for (key in responsejson) {
           if (array.length == 0) {
-            console.log('First add');
+            
             samplearray.push(responsejson[key]);
           } else {
-            console.log('other addition');
+            
             samplearray.push(responsejson[key]);
           }
         }
         setarray(samplearray);
 
-        console.log(array);
+        
 
         setcondition(false);
       })
@@ -64,7 +64,7 @@ function ViewAd({ navigation }) {
   }, []);
   if (getcondition) {
     return (
-      <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" />
 
         <Text>Waiting for response</Text>
@@ -72,105 +72,95 @@ function ViewAd({ navigation }) {
     );
   }
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: ' ',
-        width: '100%',
-        padding: 4,
-        margin: 4,
-        backgroundColor: '#fffafd',
-      }}>
-      <View style={{ flex: 1 }}>
+    <View>
+      <View>
         <View>
-          <SearchBar
-            placeholder="Search Car..."
-            onChangeText={updateSearch}
-            platform="android"
-            value={search}
-          />
+          <SearchBar placeholder="Search Car..." platform="android" />
         </View>
 
         <View>
           <View style={{ padding: 7, margin: 8 }}>
             <Text
-              style={{ fontWeight: 'bold', fontSize: 20, color: '#2C272E' }}>
-               All Cars 
+              style={{ fontWeight: "bold", fontSize: 20, color: "#2C272E" }}
+            >
+              All Cars
             </Text>
           </View>
 
           <FlatList
             data={array}
-            
             renderItem={({ item }) => {
               return (
-                <View
-                  style={{
-                    
-                    justifyContent: 'space-between', 
-                    width: '100%',
-                    flexBasis: '50%',
-                  }}>
+                <View style={{ alignItems: "center" }}>
                   <View
                     style={{
-                      backgroundColor: 'grey',
-                      width: 147,
-                      height: 190,
-                      margin: 7,
-                      padding: 5,
-                    }}>
-                    <Image
-                      style={{
-                        resizeMode: 'cover',
-                        height: 100,
-                        width: 100,
-                        marginRight: 'auto',
-                        marginLeft: 'auto',
-                        marginTop: 8,
-                      }}
-                      source={{
-                        uri: item.uri,
-                      }}
-                    />
-                    <View>
-                      <Text
-                        style={{
-                          fontWeight: 'bold',
-                          fontSize: 15,
-                          marginTop: 9,
-                          marginLeft: 9,
-                        }}>
-                        {item.name}
-                      </Text>
-                    </View>
+                      justifyContent: "space-between",
+                      width: "90%",
+                      flexBasis: "50%",
+                      
+                      backgroundColor:' '
+                    }}
+                  >
                     <View
                       style={{
-                        
-                        justifyContent: 'space-between',
-                        width: '100%',
-                       
-                        
-                      }}>
-                     
+                        backgroundColor: "grey",
 
-                      <TouchableOpacity
+                        margin: 7,
+                        padding: 5,
+                        
+                      }}
+                    >
+                      <Image
                         style={{
-                          backgroundColor: '#2D4263',
-                          width: 45,
-                          height: 45,
-                          borderRadius: 50,
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          marginTop: 7,
+                          resizeMode: "cover",
+                          height: 100,
+                          width: 200,
+                          marginRight: "auto",
+                          marginLeft: "auto",
+                          marginTop: 8,
                         }}
-                        onPress={() =>{navigation.navigate('View Car',{
-                          cars:item
-                        })}
-                          
-                        }>
-                        <Text style={{color:'#fff'}}>View</Text>
-                      </TouchableOpacity>
+                        source={{
+                          uri: item.uri,
+                        }}
+                      />
+                      <View>
+                        <Text
+                          style={{
+                            fontWeight: "bold",
+                            fontSize: 15,
+                            marginTop: 9,
+                            marginRight: "auto",
+                            marginLeft: "auto",
+                          }}
+                        >
+                          {item.name}
+                        </Text>
+                      </View>
+                      <View
+                        style={{
+                          justifyContent: "space-between",
+                          width: "100%",
+                        }}
+                      >
+                        <TouchableOpacity
+                          style={{
+                            backgroundColor: "#2D4263",
+                            width: 45,
+                            height: 45,
+                            borderRadius: 50,
+                            justifyContent: "center",
+                            alignItems: "center",
+                            marginTop: 7,
+                          }}
+                          onPress={() => {
+                            navigation.navigate("View Car", {
+                              cars: item,
+                            });
+                          }}
+                        >
+                          <Text style={{ color: "#fff" }}>View</Text>
+                        </TouchableOpacity>
+                      </View>
                     </View>
                   </View>
                 </View>

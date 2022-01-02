@@ -29,11 +29,14 @@ export default ({ navigation, route }) => {
             height: 50,
             width: 50,
             alignItems: 'center',
-            justifyContent:'center',
+            justifyContent: 'center',
             backgroundColor: '#4682b4',
-            borderRadius:10 
+            borderRadius: 10,
           }}>
-          <Text style={{ fontWeight: 'bold', fontSize: 16 ,color:'#f5f5f5' }}> Back </Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#f5f5f5' }}>
+            {' '}
+            Back{' '}
+          </Text>
         </TouchableOpacity>
         <Text
           style={{
@@ -57,7 +60,7 @@ export default ({ navigation, route }) => {
           style={{
             resizeMode: 'cover',
             height: 200,
-            width: 200,
+            width: 300,
             marginRight: 'auto',
             marginLeft: 'auto',
             marginTop: 8,
@@ -72,11 +75,23 @@ export default ({ navigation, route }) => {
             margin: 10,
             padding: 8,
             borderBottomWidth: 1,
+            flex: 1,
+            alignContent: 'center',
           }}>
-          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Name:</Text>
-          <Text style={{ fontSize: 15, paddingRight: 10 }}>{cars.name}</Text>
-          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Company:</Text>
-          <Text style={{ fontSize: 15, paddingRight: 10 }}>{cars.make}</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Name: </Text>
+            <Text style={{ fontSize: 15, paddingRight: 10 }}> {cars.name}</Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Company: </Text>
+            <Text style={{ fontSize: 15, paddingRight: 10 }}> {cars.make}</Text>
+          </View>
         </View>
         <View
           style={{
@@ -85,12 +100,20 @@ export default ({ navigation, route }) => {
             padding: 8,
             borderBottomWidth: 1,
           }}>
-          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Type:</Text>{' '}
-          <Text style={{ fontSize: 15, paddingRight: 10 }}>{cars.type}</Text>
-          <Text style={{ fontSize: 14, fontWeight: 'bold' }}>
-            {'         '}Year:
-          </Text>
-          <Text style={{ fontSize: 15, paddingRight: 10 }}>{cars.model}</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Type: </Text>
+            <Text style={{ fontSize: 15, paddingRight: 10 }}> {cars.type}</Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <Text style={{ fontSize: 14, fontWeight: 'bold' }}>Year: </Text>
+            <Text style={{ fontSize: 15, paddingRight: 10 }}> {cars.model}</Text>
+          </View>
         </View>
         <View
           style={{
@@ -99,10 +122,28 @@ export default ({ navigation, route }) => {
             padding: 8,
             borderBottomWidth: 1,
           }}>
-          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Transmisson:</Text>
-          <Text style={{ fontSize: 15, paddingRight: 10 }}>{cars.engine}</Text>
-          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Price:</Text>
-          <Text style={{ fontSize: 15, paddingRight: 10 }}>{cars.price}</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+              Transmisson:
+            </Text>
+            <Text style={{ fontSize: 15, paddingRight: 10 }}>
+              {' '}
+              {cars.engine}
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Price:</Text>
+            <Text style={{ fontSize: 15, paddingRight: 10 }}>
+              {' '}
+              {cars.price}
+            </Text>
+          </View>
         </View>
       </View>
     </ScrollView>

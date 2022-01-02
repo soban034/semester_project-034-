@@ -62,7 +62,7 @@ function Home({ navigation }) {
           
 
         }}
-        onPress={() => navigation.navigate('Show Cars')}
+        onPress={() => navigation.navigate('Show Products')}
         >
         <Text style={{fontSize:23,textAlign:'center',alignSelf:'center',margin:'auto'}}>Show Products</Text>
       </Pressable>
@@ -85,9 +85,9 @@ function Home({ navigation }) {
         onPress={() => navigation.navigate('Clients')}
         >
         <Text style={{fontSize:23,textAlign:'center',alignSelf:'center',margin:'auto'}}>Show Clients</Text>
-      </Pressable>
+      </Pressable> 
     </View>
-  );
+  ); 
 }
 
 
@@ -101,7 +101,7 @@ export default function Dashboard() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{headerShown:false }}/>
         <Stack.Screen name="Shop Owners" component={owner} />
-        <Stack.Screen name="Show Cars" component={Products} />
+        <Stack.Screen name="Show Products" component={Products} />
         <Stack.Screen name="Clients" component={Clients} />
       </Stack.Navigator>
     </NavigationContainer>
